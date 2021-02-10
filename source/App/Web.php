@@ -249,7 +249,7 @@ class Web extends Controller
             if ($login) {
                 $json['redirect'] = url("/app");
             } else {
-                $json['message'] = $auth->message()->render();
+                $json['message'] = $auth->message()->before("ooops! ")->render();
             }
 
             echo json_encode($json);
@@ -292,7 +292,7 @@ class Web extends Controller
             if ($auth->forget($data["email"])) {
                 $json["message"] = $this->message->success("Acesse seu e-mail para recuperar a senha")->render();
             } else {
-                $json["message"] = $auth->message()->render();
+                $json["message"] = $auth->message()->before("ooops! ")->render();
             }
 
             echo json_encode($json);
@@ -337,7 +337,7 @@ class Web extends Controller
                 $this->message->success("Senha alterada com sucesso. Vamos controlar?")->flash();
                 $json["redirect"] = url("/entrar");
             } else {
-                $json["message"] = $auth->message()->render();
+                $json["message"] = $auth->message()->before("ooops! ")->render();
             }
 
             echo json_encode($json);
@@ -388,7 +388,7 @@ class Web extends Controller
             if ($auth->register($user)) {
                 $json['redirect'] = url("/confirma");
             } else {
-                $json['message'] = $auth->message()->render();
+                $json['message'] = $auth->message()->before("ooops! ")->render();
             }
 
             echo json_encode($json);

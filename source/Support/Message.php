@@ -17,7 +17,12 @@ class Message
 
     /** @var string */
     private $type;
-
+    
+    /** @var string*/
+    private $before;
+    
+    /** @var string */
+    private $after;
     /**
      * @return string
      */
@@ -31,7 +36,7 @@ class Message
      */
     public function getText(): ?string
     {
-        return $this->text;
+        return $this->before. $this->text .$this->after;
     }
 
     /**
@@ -41,6 +46,30 @@ class Message
     {
         return $this->type;
     }
+    
+    /**
+     * Method before
+     *
+     * @param string $text [explicite description]
+     *
+     * @return Message
+     */
+    public function before(string $text): Message{
+        $this->before =$text;
+        return $this;
+    }
+    
+    /**
+     * Method after
+     *
+     * @param string $text [explicite description]
+     *
+     * @return Message
+     */
+    public function after(string $text): Message{
+        $this->after = $text;
+        return $this;
+    }
 
     /**
      * @param string $message
@@ -48,7 +77,7 @@ class Message
      */
     public function info(string $message): Message
     {
-        $this->type = CONF_MESSAGE_INFO;
+        $this->type = "info icon-info";
         $this->text = $this->filter($message);
         return $this;
     }
@@ -59,7 +88,7 @@ class Message
      */
     public function success(string $message): Message
     {
-        $this->type = CONF_MESSAGE_SUCCESS;
+        $this->type = "success icon-check-square-o";
         $this->text = $this->filter($message);
         return $this;
     }
@@ -70,7 +99,7 @@ class Message
      */
     public function warning(string $message): Message
     {
-        $this->type = CONF_MESSAGE_WARNING;
+        $this->type = "warning icon-warning";
         $this->text = $this->filter($message);
         return $this;
     }
@@ -81,7 +110,7 @@ class Message
      */
     public function error(string $message): Message
     {
-        $this->type = CONF_MESSAGE_ERROR;
+        $this->type = "error icon-warning";
         $this->text = $this->filter($message);
         return $this;
     }
@@ -91,7 +120,7 @@ class Message
      */
     public function render(): string
     {
-        return "<div class='" . CONF_MESSAGE_CLASS . " {$this->getType()}'>{$this->getText()}</div>";
+        return "<div class=' message {$this->getType()}'>{$this->getText()}</div>";
     }
 
     /**
