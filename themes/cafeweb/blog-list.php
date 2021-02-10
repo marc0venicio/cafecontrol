@@ -3,7 +3,8 @@
         <img title="<?= $post->title; ?>" alt="<?= $post->title; ?>" src="<?= image($post->cover, 600, 340); ?>"/>
     </a>
     <header>
-        <p class="meta"><?= $post->category()->title; ?>
+        <p class="meta">
+        <a title = "Artigos em" href="<?= url("/blog/em/{$post->category()->uri}");?>"><?= $post->category()->title; ?></a>
             &bull; Por <?= "{$post->author()->first_name} {$post->author()->last_name}"; ?>
             &bull; <?= date_fmt($post->post_at); ?>
         </p>
