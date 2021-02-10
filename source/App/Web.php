@@ -7,8 +7,8 @@ use Source\Models\Auth;
 use Source\Models\Category;
 use Source\Models\Faq\Question;
 use Source\Models\Post;
+use Source\Models\Report\Access;
 use Source\Models\User;
-use Source\Support\Email;
 use Source\Support\Pager;
 
 /**
@@ -24,13 +24,7 @@ class Web extends Controller
     {
         parent::__construct(__DIR__ . "/../../themes/" . CONF_VIEW_THEME . "/");
 
-        $email = new Email();
-        $email->bootstrap(
-            "teste de fila de email",
-            "este é apenas um teste de enivio de email",
-            "marcosvenicio007@gmail.com",
-            "Marco venicio"
-        )->sendQueue();
+        (new Access())->report();
     }
 
     /**
