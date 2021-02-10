@@ -22,26 +22,26 @@ define("CONF_SITE_TITLE", "Gerencie suas contas com o melhor café");
 define("CONF_SITE_DESC",
     "O CafeControl é um gerenciador de contas simples, poderoso e gratuito. O prazer de tomar um café e ter o controle total de suas contas.");
 define("CONF_SITE_LANG", "pt_BR");
-define("CONF_SITE_DOMAIN", "upinside.com.br");
-define("CONF_SITE_ADDR_STREET", "SC 406 - Rod. Drº Antônio Luiz Moura Gonzaga");
-define("CONF_SITE_ADDR_NUMBER", "3339");
-define("CONF_SITE_ADDR_COMPLEMENT", "Bloco A, Sala 208");
-define("CONF_SITE_ADDR_CITY", "Florianópolis");
-define("CONF_SITE_ADDR_STATE", "SC");
-define("CONF_SITE_ADDR_ZIPCODE", "88048-301");
+define("CONF_SITE_DOMAIN", "overlordintellectus.com.br");
+define("CONF_SITE_ADDR_STREET", "Manaus/AM 272 - Rua Eucalipto Bairro João Paulo II");
+define("CONF_SITE_ADDR_NUMBER", "272");
+define("CONF_SITE_ADDR_COMPLEMENT", "E.M. Francisco Maia de Amorim");
+define("CONF_SITE_ADDR_CITY", "Manaus");
+define("CONF_SITE_ADDR_STATE", "AM");
+define("CONF_SITE_ADDR_ZIPCODE", "69088-438");
 
 /**
  * SOCIAL
  */
-define("CONF_SOCIAL_TWITTER_CREATOR", "@robsonvleite");
-define("CONF_SOCIAL_TWITTER_PUBLISHER", "@robsonvleite");
-define("CONF_SOCIAL_FACEBOOK_APP", "626590460695980");
+define("CONF_SOCIAL_TWITTER_CREATOR", "@bettermarcos");
+define("CONF_SOCIAL_TWITTER_PUBLISHER", "@bettermarcos");
+define("CONF_SOCIAL_FACEBOOK_APP", "766969063901758");
 define("CONF_SOCIAL_FACEBOOK_PAGE", "upinside");
-define("CONF_SOCIAL_FACEBOOK_AUTHOR", "robsonvleiteoficial");
+define("CONF_SOCIAL_INSTAGRAM_PAGE", "upinside");
+define("CONF_SOCIAL_YOUTUBE_PAGE", "upinside");
+define("CONF_SOCIAL_FACEBOOK_AUTHOR", "marcosvenicio");
 define("CONF_SOCIAL_GOOGLE_PAGE", "107305124528362639842");
 define("CONF_SOCIAL_GOOGLE_AUTHOR", "103958419096641225872");
-define("CONF_SOCIAL_INSTAGRAM_PAGE", "robsonvleite");
-define("CONF_SOCIAL_YOUTUBE_PAGE", "upinside");
 
 /**
  * DATES
