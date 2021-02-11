@@ -232,6 +232,12 @@ class Web extends Controller
                 return;
             }
 
+            if(request_limit("weblogin", 3, 300)){
+                $json['message'] = $this->message->error("Você ultrapassou o limite de tentativas! por favor, aguarde 5 min pra tentar novamente")->render();
+                echo json_encode($json);
+                return;
+            }
+
             if (empty($data['email']) || empty($data['password'])) {
                 $json['message'] = $this->message->warning("Informe seu email e senha para entrar")->render();
                 echo json_encode($json);
@@ -280,6 +286,12 @@ class Web extends Controller
 
             if (empty($data["email"])) {
                 $json['message'] = $this->message->info("Informe seu e-mail para continuar")->render();
+                echo json_encode($json);
+                return;
+            }
+
+            if(request_repeat("webforget", $data["email"])){
+                $json['message'] = $this->message->error("Ooops Você já tentou esse email antes")->render();
                 echo json_encode($json);
                 return;
             }

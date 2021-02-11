@@ -6,6 +6,8 @@
  * ####################
  */
 
+use Source\Core\Session;
+
 /**
  * @param string $email
  * @return bool
@@ -322,4 +324,52 @@ function flash(): ?string
         return $flash;
     }
     return null;
+}
+
+
+/**
+ * Method request_limit
+ *
+ * @param string $key [explicite description]
+ * @param int $limit [explicite description]
+ * @param int $seconds [explicite description]
+ *
+ * @return bool
+ */
+function request_limit(string $key, int $limit = 5, int $seconds = 60): bool{
+    $session = new \Source\Core\Session();
+    if($session->has($key) && $session->$key->time >= time() && $session->$key->requests < $limit){
+        $session->set($key, [
+            "time" => time() + $seconds,
+            "requests" => $session->$key->requests + 1
+        ]);
+        return false;
+    }
+
+    if($session->has($key) && $session->$key->time >= time() && $session->$key->requests >= $limit){
+        return true;
+    }
+
+    $session->set($key,[
+        "time" => time() + $seconds,
+            "requests" => 1
+    ]);
+
+    return false;
+}
+
+/**
+ * @param string $field
+ * @param string $value
+ * @return bool
+ */
+function request_repeat(string $field, string $value): bool
+{
+    $session = new \Source\Core\Session();
+    if ($session->has($field) && $session->$field == $value) {
+        return true;
+    }
+
+    $session->set($field, $value);
+    return false;
 }
