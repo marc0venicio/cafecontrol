@@ -14,11 +14,12 @@ INSTITUTIONAL SITE MADE WITH PHP 7
 [//]: # (Adicione seus gifs / imagens aqui :)
 <div>
   <img src = "/gi-cafecontrol.gif" alt = "demo" height = "425">
+  <br>
+  <hr />
+  <br>
   <img src = "/gif-2-cafecontrol.gif" alt = "demo" height = "425">
 </div>
-
 <hr />
-
 <h2 align ="center">SITE MVC em PHP</h2>
 
 Este projeto foi desenvolvido no CUrso FSPHP developer pela upinside (https://www.upinside.com.br), na intenção de mostrar o máximo de recursos que podemos implementar em um site institucional
