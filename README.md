@@ -13,8 +13,7 @@ INSTITUTIONAL SITE MADE WITH PHP 7
 
 [//]: # (Adicione seus gifs / imagens aqui :)
 <div>
-  <img src = "/gif-statrtup.gif" alt = "demo" height = "425">
-  <img src = "IMAGE_2_URL" alt = "demo" height = "425">
+  <img src = "/gi-cafecontrol.gif" alt = "demo" height = "425">
 </div>
 
 <hr />
